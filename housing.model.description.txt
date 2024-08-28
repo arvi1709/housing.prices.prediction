@@ -1,0 +1,48 @@
+Model Architecture
+Base Model: Random Forest Regressor
+
+Rationale: Random Forest is a powerful ensemble method that can handle complex relationships and is less prone to overfitting compared to simpler models like linear regression.
+Hyperparameters:
+
+n_estimators: Number of decision trees in the forest.
+max_depth: Maximum depth of each decision tree.
+min_samples_split: Minimum number of samples required to split an internal node.   
+Training Process
+Data Preprocessing:
+
+Loading: Load the housing data from the CSV file housing.new.
+Handling Missing Values: Fill missing values with a suitable strategy (e.g., forward fill).
+Feature Engineering: Consider creating new features if necessary (e.g., combining features, calculating ratios).
+Encoding Categorical Variables: Encode categorical features using one-hot encoding.
+Feature Scaling: Standardize numerical features to a common scale.
+Data Splitting:
+
+Split the data into training and testing sets (e.g., 80/20 split).
+Model Training:
+
+Instantiate the Random Forest Regressor with selected hyperparameters.
+Train the model on the training data using the fit() method.
+Hyperparameter Tuning:
+
+Use techniques like grid search or randomized search to find optimal hyperparameter values.
+Evaluate different combinations of hyperparameters based on a chosen metric (e.g., mean squared error).
+Usage Instructions
+Install Required Libraries:
+
+Install necessary Python libraries: pandas, numpy, scikit-learn.
+Prepare Data:
+
+Ensure your housing data is in a CSV file named housing.new with columns: longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income, and median_house_value.   
+If necessary, preprocess the data as described in the training process.
+Load the Model:
+
+Load the trained model from a saved file (e.g., using joblib or pickle).
+Make Predictions:
+
+Prepare new data with the same features as the training data.
+Preprocess the new data using the same steps as the training data.
+Use the predict() method of the loaded model to make predictions on the new data.
+Additional Notes
+Evaluation Metrics: Consider using metrics like mean squared error (MSE), root mean squared error (RMSE), and R-squared to evaluate the model's performance.
+Model Deployment: Once the model is trained and evaluated, it can be deployed in a production environment for real-time predictions.
+Continuous Improvement: Regularly retrain the model with new data to ensure its accuracy and adapt to changing market conditions.
